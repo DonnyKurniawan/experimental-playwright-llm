@@ -1,0 +1,43 @@
+{
+  "name": "experimental-playwright-llm",
+  "version": "1.0.0",
+  "description": "Playwright automation framework integrated with LLM-based test generation",
+  "type": "module",
+  "main": "index.js",
+
+  "scripts": {
+    "generate": "node --loader ts-node/esm utils/generate-tests.ts",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report",
+    "ci": "npm run generate && npm run test"
+  },
+
+  "keywords": [
+    "playwright",
+    "typescript",
+    "automation",
+    "llm",
+    "openai",
+    "gemini",
+    "e2e",
+    "api-testing"
+  ],
+
+  "author": "",
+  "license": "ISC",
+
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^17.4.2",
+    "openai": "^6.37.0"
+  },
+
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
